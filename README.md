@@ -13,7 +13,7 @@ Although I have very limited back-end knowledge, I used the skills I have as a J
 
 I learned a lot in the process, but still wasn't able to populate the database with the sample data. Because of this, I wasn't able to confirm the update and delete buttons worked, or apply styling. 
 
-I look forward to the opportunity to talk through my code and get some critics to help me with future apps and tech challenges. Thanks for your time!
+I look forward to the opportunity to talk through my code and get some critiques to help me with future apps and tech challenges. Thanks for your time!
 
 
 Features
