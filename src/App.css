@@ -2,6 +2,7 @@
   display:flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 250px;
 }
 
 .information {
@@ -24,6 +25,8 @@ button {
   width: 320px;
   height: 50px;
   margin-top: 15px;
+  background-color: #06606F;
+  color: #fff;
 }
 
 button:hover {

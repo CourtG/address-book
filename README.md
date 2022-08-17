@@ -1,3 +1,32 @@
+Tech Challenge
+========
+
+A simple web form that links to a user database and can perform basic CRUD oprtations.
+
+Using node.js, Express, React, and mySQL (and then postgres!).
+
+Axios calls were used to send and receive (GET, POST) HTTP requests to the server
+
+NOTE: yaml script included and init.sql file containing the sample data
+
+Although I have very limited back-end knowledge, I used the skills I have as a developer to attempt to learn the back-end that I needed to make this app run. I have used Firebase, but wanted to try using the frameworks used at the company.
+
+I learned a lot in the process, but still wasn't able to populate the database with the sample data. Because of this, I wasn't able to confirm the update and delete buttons worked, or apply styling. 
+
+
+
+Features
+--------
+
+- input form to CREATE user profiles
+- "show users" button to READ or display users
+- UPDATE input fields
+- DELETE button for deleting user data
+
+- minor error handling
+- minimal CSS
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

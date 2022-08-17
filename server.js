@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     password: 'password',
-    database:  'customers'
+    database:  'users'
 });
 
 app.post('/create', (req, res) => {
@@ -69,5 +69,5 @@ app.delete('/delete/:id', (req, res) => {
 
 
 app.listen(5432, ()=> {
-    console.log("yeeeessss");
+    // console.log("yeeeessss");
 });

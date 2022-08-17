@@ -1,4 +1,3 @@
-
 import './App.css';
 import { useState } from "react";
 import Axios from 'axios';
@@ -16,7 +15,7 @@ function App() {
 
   const [userList, setUserList] = useState([]);
 
-// ADD USER
+// ADD USER (and add to UserList)
   const addUser = () => {
     Axios.post('http://localhost:5432/create', {
       location: location, 
@@ -34,14 +33,14 @@ function App() {
   };
 
 
-  //GET USER LIST
+// GET USER LIST
   const getUsers = () => {
     Axios.get("http://localhost:5432/users").then((response) => {
       setUserList(response.data)
     });
   };
 
-// UPDATES
+// UPDATES (db and UserList)
 const updateUserLocation = (id) => {
   Axios.put("http://localhost:5432/update", {location: newLocation, id: id})
     .then((response) => {
@@ -87,7 +86,7 @@ const updateUserEmail = (id) => {
   );
 };
 
-// DELETE USER
+// DELETE USER (by ID, update UserList)
 
 const deleteUser = (id) => {
   Axios.delete(`http://localhost:5432/delete/${id}`)
@@ -99,7 +98,8 @@ const deleteUser = (id) => {
 };
 
 
-// INPUT FORM
+// INPUT FORM (add/show Users + update/delete buttons per user)
+
   return (
     <div className="App">
       <div className="information">
@@ -115,9 +115,11 @@ const deleteUser = (id) => {
         }}/>
 
         <label>Email:</label>
-        <input type="mail" onChange={(event) => {
+        <input type="text" onChange={(event) => {
           setEmail(event.target.value);
         }}/>
+
+{/* BUTTONS TO ADD/SHOW USERS */}
 
         <button onClick={addUser}>Add User</button>
       </div>
@@ -165,18 +167,33 @@ const deleteUser = (id) => {
                   />
                 
 
-{/* BUTTONS */}
+{/* UPDATE AND DELETE BUTTONS */}
 
                   <button onClick={()=> {
-                    updateUserLocation(val.id), 
-                    updateUserAlias(val.id), 
+                    updateUserLocation(val.id);
+                    }}
+                    >
+                      {""}
+                      Update Location
+                  </button>
+
+                  <button onClick={()=> {
+                    updateUserAlias(val.id);
+                    }}
+                    >
+                      {""}
+                      Update Alias
+                  </button>
+                                    
+                  <button onClick={()=> {
                     updateUserEmail(val.id);
                     }}
                     >
                       {""}
-                      Update User
+                      Update Email
                   </button>
 
+                  
                   <button 
                     onClick={()=> {
                       deleteUser(val.id);
