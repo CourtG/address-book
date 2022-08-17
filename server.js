@@ -42,7 +42,7 @@ app.get('/users', (req, res) => {
 app.put('/update', (req, res) => {
     const id = req.body.id 
     db.query(
-        "UPDATE SET users location = ? WHERE id = ?", [location, id], 
+        "UPDATE users SET location = ? WHERE id = ?", [location, id], 
         (err, result) => {
             if (err) {
                 console.log(err);
@@ -53,6 +53,19 @@ app.put('/update', (req, res) => {
     );
 });
 
+app.delete('/delete/:id', (req, res) => {
+    const id = req.params.id
+    db.query(
+        "DELETE FROM users WHERE id = ?", 
+        id, 
+        (err, result) => {
+            if (err) {
+            console.log(err);
+            } else {
+            res.send(result);
+            }
+    })
+});
 
 
 app.listen(5432, ()=> {
